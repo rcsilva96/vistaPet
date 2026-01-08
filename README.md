@@ -62,7 +62,7 @@ Conceitos aplicados
 Status do Pet
 
 O estado de um pet é representado por um enum administrativo:
-
+```
 public enum PetStatus {
     ATIVO,
     INATIVO,
@@ -70,7 +70,7 @@ public enum PetStatus {
     ARQUIVADO,
     DESCONHECIDO
 }
-
+```
     ⚠️ Este status não representa condição clínica ou biológica, apenas o estado do pet dentro do sistema.
 
 🌐 Frontend — vistapet-frontend
@@ -117,7 +117,7 @@ http://localhost:8080
 Criar um pet
 
 POST /api/pets
-
+```
 {
   "nome": "test",
   "especie": "test",
@@ -127,12 +127,14 @@ POST /api/pets
   "observacao": "Isso não é um pet!",
   "status": "ATIVO"
 }
-
+```
 Desativar um pet (soft delete)
-
+```
 PATCH /api/pets/{id}/disable
-
+```
 O pet não é removido do banco, apenas marcado como INATIVO.
+
+
 🤝 Contribuição
 
 Este projeto é 100% open source.
@@ -166,6 +168,8 @@ Para mais detalhes, consulte o arquivo LICENSE.
 
 Este projeto é distribuído sob licença open source.
 Sinta-se livre para usar, estudar e modificar.
+
+
 ❤️ Considerações finais
 
 VistaPet não é apenas código.
