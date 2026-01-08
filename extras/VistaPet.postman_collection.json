@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "1bc3d83e-0ae5-451b-b015-760f18d2d8b1",
+		"name": "VistaPet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28811046"
+	},
+	"item": [
+		{
+			"name": "Pets",
+			"item": [
+				{
+					"name": "Criar Pet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"test\",\n  \"especie\": \"test\",\n  \"peso\": 0.1,\n  \"raca\": \"test\",\n  \"cor\": \"test\",\n  \"observacao\": \"Isso não é um pet!\",\n  \"status\": \"ATIVO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Pets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Pet por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pets/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pets",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Pet",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 0,  \n  \"nome\": \"test\",\n  \"especie\": \"test\",\n  \"peso\": 0.1,\n  \"raca\": \"test\",\n  \"cor\": \"test\",\n  \"observacao\": \"Isso não é um pet!\",\n  \"status\": \"ATIVO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pets/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pets",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Desabilitar Pet",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pets/{id}/disable",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pets",
+								"{id}",
+								"disable"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
