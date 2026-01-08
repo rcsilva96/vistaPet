@@ -29,7 +29,7 @@ vistapet/
 ├── vistapet-frontend/    # Frontend (React - projeto inicial)
 ├── extras/               # Collections do Postman e materiais auxiliares
 └── README.md
-
+```
 ⚙️ Backend — vistapet-backend
 
 API REST desenvolvida em Java + Spring Boot, responsável por toda a lógica de negócio.
