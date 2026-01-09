@@ -28,6 +28,6 @@ public class PetEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private PetStatusEnum status = PetStatusEnum.ATIVO;
+    private PetStatusEnum status;
 
 }

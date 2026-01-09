@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/home/Home';
+import Layout from './components/layout/layout';
+import Providers from './contexts/Providers.tsx'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import CriarPet from './components/criar-pet/CriarPet';
+import ListarPet from './components/listar-pet/ListarPet';
+import NotFound from './components/not-found/NotFound.tsx';
+
+
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Providers>
+      <Router>
+        <div className="container py-4">
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/listar-pet" element={<ListarPet />} />
+            <Route path="/criar-pet" element={<CriarPet />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Layout>
+        </div>
+      </Router>
+    </Providers>
+  );
 }
 
 export default App

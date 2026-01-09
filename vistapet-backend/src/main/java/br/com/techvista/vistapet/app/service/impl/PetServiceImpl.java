@@ -26,6 +26,13 @@ public class PetServiceImpl implements PetService {
     public PetDTO createPet(PetDTO dto){
 
         PetEntity entity = PetMapper.toEntity(dto);
+
+        if (dto.getStatus() == null) {
+            entity.setStatus(PetStatusEnum.DESCONHECIDO);
+        } else {
+            entity.setStatus(dto.getStatus());
+        }
+
         PetEntity saved = petRepository.save(entity);
 
         log.info("Pet registado com sucesso: {}", saved.getNome());
@@ -68,6 +75,7 @@ public class PetServiceImpl implements PetService {
         existing.setRaca(dto.getRaca());
         existing.setCor(dto.getCor());
         existing.setObservacao(dto.getObservacao());
+        existing.setStatus(dto.getStatus());
 
         PetEntity updated = petRepository.save(existing);
         log.info("Pet atualizado: {}", updated.getNome());

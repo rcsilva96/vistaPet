@@ -31,6 +31,6 @@ public class PetDTO {
 
     private String observacao;
 
-    private PetStatusEnum status = PetStatusEnum.ATIVO;
+    private PetStatusEnum status;
 
 }
