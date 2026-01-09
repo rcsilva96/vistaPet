@@ -80,41 +80,55 @@ const ListarPet: React.FC = () => {
 
         <div className="card shadow-sm">
           {/* Header */}
-          <div className="card-header bg-primary text-white d-flex flex-column flex-md-row justify-content-between gap-2">
-            <h4 className="mb-0">Lista de Pets</h4>
+          <div className="card-header bg-primary text-white py-3">
+            <div className="d-flex align-items-center justify-content-between flex-wrap gap-3">
 
-            <div className="d-flex gap-2 flex-wrap">
-              <input
-                type="text"
-                placeholder="Buscar por nome, espécie, raça ou cor..."
-                className="form-control"
-                value={busca}
-                onChange={(e) => setBusca(e.target.value)}
-              />
+              {/* Título */}
+              <h4 className="mb-0 fw-semibold">
+                Lista de Pets
+              </h4>
 
-              <select
-                className="form-select"
-                value={filtroStatus}
-                onChange={(e) =>
-                  setFiltroStatus(e.target.value as FiltroStatus)
-                }
-              >
-                <option value="TODOS">Todos</option>
-                <option value="ATIVO">Ativos</option>
-                <option value="INATIVO">Inativos</option>
-                <option value="ADOTADO">Adotados</option>
-                <option value="ARQUIVADO">Arquivados</option>
-                <option value="DESCONHECIDO">Desconhecido</option>
-              </select>
+              {/* Toolbar */}
+              <div className="d-flex align-items-center gap-2 flex-wrap">
 
-              <button
-                className="btn btn-success"
-                onClick={() => navigate('/criar-pet')}
-              >
-                Novo Pet
-              </button>
+                <input
+                  type="text"
+                  className="form-control form-control-sm"
+                  placeholder="Buscar..."
+                  value={busca}
+                  onChange={(e) => setBusca(e.target.value)}
+                  style={{ width: '220px' }}
+                />
+
+                <select
+                  className="form-select form-select-sm"
+                  value={filtroStatus}
+                  onChange={(e) =>
+                    setFiltroStatus(e.target.value as FiltroStatus)
+                  }
+                  style={{ width: '150px' }}
+                >
+                  <option value="TODOS">Todos</option>
+                  <option value="ATIVO">Ativos</option>
+                  <option value="INATIVO">Inativos</option>
+                  <option value="ADOTADO">Adotados</option>
+                  <option value="ARQUIVADO">Arquivados</option>
+                  <option value="DESCONHECIDO">Desconhecido</option>
+                </select>
+
+                <button
+                  className="btn btn-success btn-sm"
+                  onClick={() => navigate('/criar-pet')}
+                >
+                  <i className="fas fa-plus me-1"></i>
+                  Novo Pet
+                </button>
+
+              </div>
             </div>
           </div>
+
+
 
           {/* Body */}
           <div className="card-body">
@@ -139,17 +153,16 @@ const ListarPet: React.FC = () => {
                       <td>{pet.cor}</td>
                       <td>
                         <span
-                          className={`badge ${
-                            pet.status === 'ATIVO'
+                          className={`badge ${pet.status === 'ATIVO'
                               ? 'bg-success'
                               : pet.status === 'INATIVO'
-                              ? 'bg-secondary'
-                              : pet.status === 'ADOTADO'
-                              ? 'bg-info'
-                              : pet.status === 'ARQUIVADO'
-                              ? 'bg-dark'
-                              : 'bg-warning'
-                          }`}
+                                ? 'bg-secondary'
+                                : pet.status === 'ADOTADO'
+                                  ? 'bg-info'
+                                  : pet.status === 'ARQUIVADO'
+                                    ? 'bg-dark'
+                                    : 'bg-warning'
+                            }`}
                         >
                           {pet.status}
                         </span>
@@ -176,10 +189,9 @@ const ListarPet: React.FC = () => {
                                 <p><b>Raça:</b> ${pet.raca}</p>
                                 <p><b>Cor:</b> ${pet.cor}</p>
                                 <p><b>Status:</b> ${pet.status}</p>
-                                ${
-                                  pet.observacao
-                                    ? `<p><b>Observação:</b> ${pet.observacao}</p>`
-                                    : ''
+                                ${pet.observacao
+                                  ? `<p><b>Observação:</b> ${pet.observacao}</p>`
+                                  : ''
                                 }
                               `,
                               confirmButtonText: 'OK',
