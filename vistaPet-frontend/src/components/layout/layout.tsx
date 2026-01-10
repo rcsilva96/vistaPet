@@ -11,14 +11,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   const menuItems = [
     { path: '/', icon: 'bi-house-door-fill', label: 'Home' },
-    { path: '/listar-pet', icon: 'bi-people-fill', label: 'Pets' },
-    { path: '/listar-tutor', icon: 'bi-person-fill', label: 'Tutores' }
+    { path: '/listar-pet', icon: 'fa-solid fa-paw', label: 'Pets' },
+    { path: '/listar-tutor', icon: 'bi-person-fill', label: 'Tutores' },
+    { path: '/about', icon: 'fa-solid fa-circle-info', label: 'Sobre' }
   ];
 
   const getPageTitle = () => {
     switch(location.pathname) {
       case '/': return 'Dashboard';
       case '/listar-pet': return 'Pets';
+      case '/listar-tutor': return 'Tutores';
+      case '/about': return 'Sobre';
       default: return 'VistaPet';
     }
   };

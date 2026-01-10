@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import About from './components/about/About.tsx';
 import CriarPet from './components/criar-pet/CriarPet';
 import ListarPet from './components/listar-pet/ListarPet';
 import CriarTutor from './components/criar-tutor/CriarTutor.tsx';
@@ -23,6 +24,7 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route path="/listar-pet" element={<ListarPet />} />
             <Route path="/criar-pet" element={<CriarPet />} />
             <Route path="/listar-tutor" element={<ListarTutor />} />
