@@ -132,6 +132,132 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Tutores",
+			"item": [
+				{
+					"name": "Novo Tutor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"\",\n    \"cpf\": \"\",\n    \"endereco\": \"\",\n    \"telefone\": \"\",\n    \"email\": \"\",\n    \"observacoes\": \"\",\n    \"status\": \"ATIVO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/tutores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tutores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Tutores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/tutores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tutores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Tutores por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/tutores/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tutores",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Tutor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"\",\n    \"nome\": \"\",\n    \"cpf\": \"\",\n    \"endereco\": \"\",\n    \"telefone\": \"\",\n    \"email\": \"\",\n    \"observacoes\": \"\",\n    \"status\": \"ATIVO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/tutores/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tutores",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Desabilitar Tutor",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/tutores/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tutores",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

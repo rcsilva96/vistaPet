@@ -1,5 +1,7 @@
 package br.com.techvista.vistapet.app.dto;
 
+import br.com.techvista.vistapet.app.enums.TipoOcorrenciaEnum;
+import br.com.techvista.vistapet.app.enums.TutorStatusEnum;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +18,7 @@ public class TutorDTO {
     private String nome;
 
     @NotBlank(message = "Você deve informar o CPF do tutor")
-    private Integer cpf;
+    private String cpf;
 
     @NotBlank(message = "Você deve informar o endereço do tutor")
     private String endereco;
@@ -26,5 +28,9 @@ public class TutorDTO {
 
     @NotBlank(message = "Você deve informar o e-mail do tutor")
     private String email;
+
+    private String observacoes;
+
+    private TutorStatusEnum status;
 
 }
