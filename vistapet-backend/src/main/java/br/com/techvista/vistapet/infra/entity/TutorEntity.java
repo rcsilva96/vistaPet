@@ -1,6 +1,7 @@
 package br.com.techvista.vistapet.infra.entity;
 
 import br.com.techvista.vistapet.app.enums.TutorStatusEnum;
+import br.com.techvista.vistapet.infra.embeddable.EnderecoEmbeddable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,7 +25,7 @@ public class TutorEntity {
 
     private String nome;
     private String cpf;
-    private String endereco;
+    private EnderecoEmbeddable endereco;
     private String telefone;
     private String email;
     private String observacoes;

@@ -20,8 +20,7 @@ public class TutorDTO {
     @NotBlank(message = "Você deve informar o CPF do tutor")
     private String cpf;
 
-    @NotBlank(message = "Você deve informar o endereço do tutor")
-    private String endereco;
+    private EnderecoDTO endereco;
 
     @NotBlank(message = "Você deve informar o telefone do tutor")
     private String telefone;

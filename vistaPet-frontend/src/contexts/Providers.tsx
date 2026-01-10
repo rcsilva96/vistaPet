@@ -1,11 +1,13 @@
 import type { ReactNode, ComponentType } from 'react';
 import { PetProvider } from './PetContext';
+import { TutorProvider } from './TutorContext';
 
 type AppProvider = ComponentType<{ children: ReactNode }>;
 
 const providers: AppProvider[] = [
   PetProvider,
-  // TutorProvider amanhã
+  TutorProvider
+  // Outros Providers podem ser adicionados aqui
 ];
 
 interface Props {

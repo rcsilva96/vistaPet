@@ -218,7 +218,7 @@ const ListarPet: React.FC = () => {
               </table>
             ) : (
               <h5 className="text-center mt-3">
-                Nenhum pet encontrado 😿
+                Nenhum pet encontrado 
               </h5>
             )}
           </div>

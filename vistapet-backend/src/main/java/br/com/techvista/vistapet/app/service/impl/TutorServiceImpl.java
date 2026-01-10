@@ -2,6 +2,7 @@ package br.com.techvista.vistapet.app.service.impl;
 
 import br.com.techvista.vistapet.app.dto.TutorDTO;
 import br.com.techvista.vistapet.app.enums.TutorStatusEnum;
+import br.com.techvista.vistapet.app.mapper.EnderecoMapper;
 import br.com.techvista.vistapet.app.mapper.TutorMapper;
 import br.com.techvista.vistapet.app.service.TutorService;
 import br.com.techvista.vistapet.domain.repository.TutorRepository;
@@ -71,7 +72,9 @@ public class TutorServiceImpl implements TutorService {
 
         existing.setNome(dto.getNome());
         existing.setCpf(dto.getCpf());
-        existing.setEndereco(dto.getEndereco());
+        existing.setEndereco(
+                EnderecoMapper.toEmbeddable(dto.getEndereco())
+        );
         existing.setTelefone(dto.getTelefone());
         existing.setEmail(dto.getEmail());
         existing.setObservacoes(dto.getObservacoes());

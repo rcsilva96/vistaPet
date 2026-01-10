@@ -1,9 +1,11 @@
 # 🐾 VistaPet
 
-VistaPet é um projeto **open source** criado como uma carta de amor aos pets e às pessoas que cuidam deles.  
-A proposta é oferecer uma base sólida, simples e extensível para sistemas de gestão veterinária, clínicas, ONGs ou projetos educacionais.
+VistaPet é um projeto **open source de caráter educacional** criado como uma carta de amor aos pets e às pessoas que cuidam deles.
 
-Este projeto **não nasce com foco comercial**, mas sim como:
+A proposta é oferecer uma **base sólida, simples e extensível** para sistemas de gestão veterinária, clínicas, ONGs ou projetos de aprendizado — sempre com respeito ao domínio e às histórias que ele representa.
+
+Este projeto **não nasce com foco comercial**, mas como:
+
 - um projeto de aprendizado real
 - um portfólio técnico
 - uma base aberta para quem quiser adaptar, evoluir ou contribuir
@@ -14,9 +16,11 @@ Este projeto **não nasce com foco comercial**, mas sim como:
 
 O VistaPet busca modelar o **ciclo administrativo de um pet** dentro de um sistema, com cuidado técnico e sensibilidade humana.
 
-Alguns princípios:
+Princípios que guiam o desenvolvimento:
+
 - Nenhum pet é “apagado” do sistema sem necessidade
-- Estados são tratados com clareza e respeito
+- Estados são tratados de forma explícita e compreensível
+- Regras administrativas não se misturam com regras clínicas
 - O código deve ser legível, extensível e honesto
 
 ---
@@ -26,13 +30,14 @@ Alguns princípios:
 ```text
 vistapet/
 ├── vistapet-backend/     # API REST (Spring Boot)
-├── vistapet-frontend/    # Frontend (React - projeto inicial)
-├── extras/               # Collections do Postman e materiais auxiliares
+├── vistapet-frontend/    # Frontend (React)
+├── extras/               # Postman, exemplos e materiais auxiliares
 └── README.md
 ```
+
 ⚙️ Backend — vistapet-backend
 
-API REST desenvolvida em Java + Spring Boot, responsável por toda a lógica de negócio.
+API REST desenvolvida em Java + Spring Boot, responsável pela lógica de negócio e regras administrativas do sistema.
 Tecnologias utilizadas
 
     Java 17+
@@ -47,22 +52,22 @@ Tecnologias utilizadas
 
 Conceitos aplicados
 
-    Arquitetura em camadas
+    Arquitetura em camadas (com separação clara de responsabilidades)
 
-    DTOs para isolamento de domínio
+    Uso de DTOs para isolamento entre API e domínio
 
     Soft delete via status administrativo
 
-    Enum para modelagem clara de estados
+    Enums para modelagem explícita de estados
 
     Transações bem definidas
 
-    Código orientado à legibilidade
+    Código orientado à legibilidade e manutenção
 
 Status do Pet
 
 O estado de um pet é representado por um enum administrativo:
-```
+
 public enum PetStatus {
     ATIVO,
     INATIVO,
@@ -70,20 +75,24 @@ public enum PetStatus {
     ARQUIVADO,
     DESCONHECIDO
 }
-```
-    ⚠️ Este status não representa condição clínica ou biológica, apenas o estado do pet dentro do sistema.
+
+⚠️ Importante: este status não representa condição clínica ou biológica, apenas o estado do pet dentro do sistema.
+
 
 🌐 Frontend — vistapet-frontend
 
-Frontend iniciado com React, ainda em estágio inicial.
+Frontend desenvolvido em React, atualmente em estágio inicial, com foco em integração direta com a API.
+Funcionalidades atuais
 
-No momento:
+    CRUD completo de Pets
 
-    Apenas o projeto base foi criado
+    CRUD completo de Tutores
 
-    Nenhuma regra de negócio implementada
+    Comunicação funcional com o backend
 
-A ideia é evoluir o frontend aos poucos, mantendo alinhamento com a API.
+A ideia é evoluir o frontend gradualmente, mantendo alinhamento conceitual com a API e evitando complexidade prematura.
+
+
 🧪 Extras — extras
 
 Pasta destinada a materiais auxiliares, como:
@@ -95,6 +104,9 @@ Pasta destinada a materiais auxiliares, como:
     Documentação de testes manuais da API
 
 Ideal para quem quiser testar ou contribuir rapidamente.
+
+
+
 🚀 Como executar o projeto (Backend)
 Pré-requisitos
 
@@ -104,7 +116,7 @@ Pré-requisitos
 
     PostgreSQL
 
-Passos básicos
+Execução
 
 cd vistapet-backend
 mvn spring-boot:run
@@ -113,11 +125,30 @@ A API ficará disponível em:
 
 http://localhost:8080
 
+🚀 Como executar o projeto (Frontend)
+Pré-requisitos
+
+    Node.js
+
+    NPM
+
+    React
+
+Execução
+
+cd vistapet-frontend
+npm install
+npm run dev
+
+A aplicação ficará disponível em:
+
+http://localhost:5173
+
 🛠️ Exemplos de uso (API)
 Criar um pet
 
 POST /api/pets
-```
+
 {
   "nome": "test",
   "especie": "test",
@@ -127,17 +158,15 @@ POST /api/pets
   "observacao": "Isso não é um pet!",
   "status": "ATIVO"
 }
-```
+
 Desativar um pet (soft delete)
-```
+
 PATCH /api/pets/{id}/disable
-```
+
 O pet não é removido do banco, apenas marcado como INATIVO.
-
-
 🤝 Contribuição
 
-Este projeto é 100% open source.
+Este projeto é aberto à comunidade.
 
 Sinta-se à vontade para:
 
@@ -147,32 +176,34 @@ Sinta-se à vontade para:
 
     criar forks
 
-    adaptar para sua realidade
+    adaptar o projeto à sua realidade
 
 Toda contribuição respeitosa é bem-vinda.
-📜 Licença: Creative Commons — CC BY-NC 4.0
+📜 Licença
 
-Este projeto é licenciado sob a **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**.
+Este projeto é licenciado sob a Creative Commons Attribution–NonCommercial 4.0 (CC BY-NC 4.0).
 
 Você pode:
-- Usar
-- Estudar
-- Modificar
-- Compartilhar
+
+    Usar
+
+    Estudar
+
+    Modificar
+
+    Compartilhar
 
 Desde que:
-- Dê os créditos ao autor
-- **Não utilize para fins comerciais**
+
+    Dê os créditos ao autor
+
+    Não utilize para fins comerciais
 
 Para mais detalhes, consulte o arquivo LICENSE.
-
-Este projeto é distribuído sob licença open source.
-Sinta-se livre para usar, estudar e modificar.
-
-
 ❤️ Considerações finais
 
 VistaPet não é apenas código.
+
 É uma tentativa de fazer software com respeito, clareza e propósito.
 
-Se este projeto ajudar alguém — seja um desenvolvedor, uma clínica ou um pet — ele já cumpriu sua missão.
+Se este projeto ajudar alguém — seja um desenvolvedor, uma clínica, uma ONG ou um pet — ele já cumpriu sua missão.

@@ -13,7 +13,7 @@ public class TutorMapper {
                 entity.getId(),
                 entity.getNome(),
                 entity.getCpf(),
-                entity.getEndereco(),
+                EnderecoMapper.toDTO(entity.getEndereco()),
                 entity.getTelefone(),
                 entity.getEmail(),
                 entity.getObservacoes(),
@@ -30,7 +30,7 @@ public class TutorMapper {
         entity.setId(dto.getId());
         entity.setNome(dto.getNome());
         entity.setCpf(dto.getCpf());
-        entity.setEndereco(dto.getEndereco());
+        entity.setEndereco(EnderecoMapper.toEmbeddable(dto.getEndereco()));
         entity.setTelefone(dto.getTelefone());
         entity.setEmail(dto.getEmail());
         entity.setObservacoes(dto.getObservacoes());

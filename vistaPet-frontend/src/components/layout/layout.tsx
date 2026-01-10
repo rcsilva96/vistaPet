@@ -11,7 +11,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   const menuItems = [
     { path: '/', icon: 'bi-house-door-fill', label: 'Home' },
-    { path: '/listar-pet', icon: 'bi-people-fill', label: 'Pets' }
+    { path: '/listar-pet', icon: 'bi-people-fill', label: 'Pets' },
+    { path: '/listar-tutor', icon: 'bi-person-fill', label: 'Tutores' }
   ];
 
   const getPageTitle = () => {

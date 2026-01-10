@@ -207,6 +207,7 @@ const CriarPet: React.FC = () => {
                   <li>Raça e cor são opcionais, mas recomendados</li>
                   <li>Você pode editar essas informações posteriormente</li>
                   <li>Para fins de registro, é recomendado preencher todas as informações</li>
+                  <li>Os status não representam a condição clínica ou biológica do animal, apenas o estado dentro do sistema.</li>
                 </ul>
 
                 <hr />
