@@ -258,6 +258,132 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Medicamentos",
+			"item": [
+				{
+					"name": "Novo Medicamento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nomeComercial\": \"Amoxilina\",\n  \"principioAtivo\": \"Amoxicilina\",\n  \"dosagem\": \"500mg\",\n  \"formaFarmaceutica\": \"Comprimido\",\n  \"quantidadeEstoque\": 100,\n  \"estoqueMinimo\": 20,\n  \"precoUnitario\": 1.50,\n  \"controlado\": false,\n  \"ativo\": true\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/medicamentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"medicamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Medicamentos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/medicamentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"medicamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Medicamento por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/medicamentos/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"medicamentos",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Medicamento",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nomeComercial\": \"Amoxilina\",\n  \"principioAtivo\": \"Amoxicilina\",\n  \"dosagem\": \"500mg\",\n  \"formaFarmaceutica\": \"Comprimido\",\n  \"quantidadeEstoque\": 120,\n  \"estoqueMinimo\": 20,\n  \"precoUnitario\": 1.50,\n  \"controlado\": false,\n  \"ativo\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/medicamentos/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"medicamentos",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Medicamento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/medicamentos/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"medicamentos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
